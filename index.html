@@ -49,13 +49,14 @@
 
     .derecha {
       border-left: 2px solid black;
+      font-family: 'Times New Roman', Times, serif;
     }
 
     .message-header {
       width: 100%;
       margin: 10px auto;
       font-family: 'Barlow Semi Condensed', sans-serif;
-      font-size: 109px;
+      font-size: 6.8rem;
       text-align: center;
       border-top: 2px solid black;
       border-bottom: 4px solid black;
@@ -137,26 +138,33 @@
     .qr {
       width: 175px;
       height: 175px;
-      padding: 10px;
       margin: 20px auto;
-      border: 4px solid black;
-      border-radius: 5px;
-      background-color: #ffffff;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-top: 20px !important;
       margin-bottom: 0.5rem;
       font-size: 0.9rem;
       color: #666;
     }
 
     .boton {
+      margin: 10px auto;
       padding: 0.5rem 1rem;
-      background-color: #333;
-      color: #fff;
+      background-color: #625947;
+      color: #edd8ad;
       text-decoration: none;
+      border: 2px solid #625947;
       border-radius: 5px;
       font-size: 1rem;
+      font-weight: bold;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease;
+    }
+
+    .boton:hover {
+      transform: scale(1.2);
     }
 
     .main {
@@ -386,14 +394,9 @@
     }
 
     .esperamos {
-      border-top: 2px solid #333;
-      border-bottom: 4px solid #333;
-      text-align: center;
-    }
-
-    .esperamos {
       font-family: 'UnifrakturCook', cursive;
-      font-size: 2.5rem;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
       margin: 0px 0 !important;
     }
     .footer-separador {
@@ -600,7 +603,7 @@
   <div class="main">
     <table class="header-invitacion">
       <tr>
-        <td class="izquierda">Kevin López &<br> Canessa</td>
+        <td class="izquierda">Kevin López &<br>Joselin Canessa</td>
         <td class="centro">¡Estás invitado!</td>
         <td class="derecha">Domingo, 30<br>Noviembre 2025</td>
       </tr>
@@ -678,15 +681,15 @@
         <span>Detalles</span>
       </div>
     <div class="container">
+      <div class="qr-section">
+        <img src="Reunion-icon.jpg" class="qr" alt="Conferencia">
+        <a href="https://maps.app.goo.gl/jc6nmEJNVW3qsby57" class="boton">UBICACIÓN</a>
+      </div>
       <div class="info">
         <h1>Conferencia Pública</h1>
         <p>Hora: 02:00 pm</p>
         <p>Salon del reino de los Testigos de Jehová</p>
         <p>Congregación Sensunapán</p>
-      </div>
-      <div class="qr-section">
-        <img id="qr-conferencia" class="qr" alt="Código QR aparecerá aquí">
-        <a href="https://maps.app.goo.gl/jc6nmEJNVW3qsby57" class="boton">Ubicación</a>
       </div>
     </div>
     <div class="container">
@@ -697,8 +700,8 @@
         <p>Colonia El Balsamar</p>
       </div>
       <div class="qr-section">
-        <img id="qr-recepcion" class="qr" alt="Código QR aparecerá aquí">
-        <a href="https://maps.app.goo.gl/Z4AeRozfHqWRQH4t6" class="boton">Ubicación</a>
+        <img src="Fiesta-icon.png" class="qr" alt="Recepción">
+        <a href="https://maps.app.goo.gl/Z4AeRozfHqWRQH4t6" class="boton">UBICACIÓN</a>
       </div>
     </div>    
     <div class="cita-biblica">
@@ -734,16 +737,16 @@
           <strong>¡Contar con tu presencia en este gran día!</strong>
         </p>
       </div>
-
-      <table class="banner-fecha">
-        <tr>
-          <td class="corazon"><i class="fa-solid fa-heart"></i> <i class="fa-solid fa-heart"></i></td>
-          <td class="esperamos">¡Te Esperamos</td>
-          <td class="corazon"><i class="fa-solid fa-heart"></i> <i class="fa-solid fa-heart"></i></td>
-        </tr>
-      </table>
-      <div class="footer-separador"></div>
     </div>
+  
+    <table class="banner-fecha">
+      <tr>
+        <td class="corazon" style="text-align: left !important;"><i class="fa-solid fa-heart"></i> <i class="fa-solid fa-heart"></i></td>
+        <td class="fecha" style="font-family: 'UnifrakturCook', cursive; font-size: 3rem;">¡Te Esperamos!</td>
+        <td class="corazon" style="text-align: right !important;"><i class="fa-solid fa-heart"></i> <i class="fa-solid fa-heart"></i></td>
+      </tr>
+    </table>
+    <div class="footer-separador"></div>
   </div>
   <script>
     document.addEventListener("DOMContentLoaded", function() {   
