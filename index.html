@@ -21,18 +21,18 @@
     #introDiv {
       position: relative;
       height: 100vh;
-    }
+    }    
 
-    #introContainer0 {
+    #introContainer {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
       width: 100%;
+      opacity: 1;
     }
 
     .fade-scroll {
       opacity: 0;
-      transform: translateY(50%);
       transition: opacity 1.2s ease-out, transform 1.2 ease-out;
     }
     .fade-scroll.visible {
@@ -676,8 +676,8 @@
 </head>
 <body>
   <div class="main">
-    <div id="introDiv" class="reveal-top">
-      <div id="introContainer">
+    <div id="introDiv">
+      <div id="introContainer" class="reveal-bottom">
         <img src="anillos.jpg" alt="Nuestra Boda" class="intro-image"/>
         <table class="intro">
           <tr>
@@ -867,7 +867,7 @@
     }
 
     function hideFunction() {
-      window.sr = ScrollReveal({ duration: 1350, distance: '-250px', easing: 'ease-out' });
+      window.sr = ScrollReveal({ duration: 1350, distance: '250px', easing: 'ease-out' });
 
       sr.reveal('.reveal-top', { origin: 'bottom', reset: true });
       sr.reveal('.reveal-bottom', { origin: 'top', reset: true });
