@@ -23,7 +23,7 @@
       height: 100vh;
     }
 
-    #introContainer {
+    #introContainer0 {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -31,8 +31,13 @@
     }
 
     .fade-scroll {
+      opacity: 0;
+      transform: translateY(50%);
+      transition: opacity 1.2s ease-out, transform 1.2 ease-out;
+    }
+    .fade-scroll.visible {
       opacity: 1;
-      transition: opacity 0.5s ease;
+      transform: translateY(0);
     }
     .fade-scroll.oculto {
       opacity: 0;  pointer-events: none; /* evita interacción cuando está oculto */
@@ -293,12 +298,25 @@
       line-height: 1.6;
     }
 
+    #container-regalo {
+      border: 2px solid #333;
+      border-radius: 10px;
+      margin: 2rem auto;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background-color: #fdfdfd;
+      text-align: center;
+    }
+
     #titulo-regalo {
       font-family: 'Great Vibes', cursive;
       font-size: 3rem;
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    #content-regalo {
+      font-size: 1.5rem !important;
     }
 
     .bendicion {
@@ -658,7 +676,7 @@
 </head>
 <body>
   <div class="main">
-    <div id="introDiv" class="fade-scroll">
+    <div id="introDiv" class="reveal-top">
       <div id="introContainer">
         <img src="anillos.jpg" alt="Nuestra Boda" class="intro-image"/>
         <table class="intro">
@@ -680,41 +698,42 @@
         </table>
       </div>
     </div>
-    <table class="header-invitacion">
+    <div class="reveal-bottom"> 
+      <table class="header-invitacion">
       <tr>
         <td class="izquierda">Kevin López &<br>Joselin Canessa</td>
         <td class="centro">¡Estás invitado!</td>
         <td class="derecha">Domingo, 30<br>Noviembre 2025</td>
       </tr>
     </table>
-    <table class="message-header">
+    <table class="message-header reveal-bottom">
       <tr>
         <td>
           NOS VAMOS A CASAR
         </td>
       </tr>
     </table>
-    <img src="https://github.com/kevino44/hosting/blob/gh-pages/Foto-Boda.jpg?raw=true" alt="Foto Boda" class="imagen-responsiva">
-    <table class="banner-fecha">
+    <img src="https://github.com/kevino44/hosting/blob/gh-pages/Foto-Boda.jpg?raw=true" alt="Foto Boda" class="reveal-bottom imagen-responsiva">
+    <table class="banner-fecha reveal-bottom">
       <tr>
         <td class="corazon"><i class="fa-solid fa-heart"></i> <i class="fa-solid fa-heart"></i></td>
         <td class="fecha">DOMINGO, 30 NOVIEMBRE 2025</td>
         <td class="corazon"><i class="fa-solid fa-heart"></i> <i class="fa-solid fa-heart"></i></td>
       </tr>
     </table>
-    <div class="names">
+    <div class="names reveal-bottom">
       <p>Kevin & Joselin</p>
       <div class="lineado">
         <span>¡Se van a casar!</span>
       </div>
     </div>
-    <div class="cita-biblica">
+    <div class="cita-biblica reveal-bottom">
       <p>“Así que ya no son dos, sino una sola carne. Por lo tanto, lo que Dios ha unido, que no lo separe ningún hombre”. (Mateo 19:6)</p>
     </div>
-    <div class="footer-names">
+    <div class="footer-names reveal-bottom">
       <p>¡LA FELICIDAD COMPLETA!</p>
     </div>
-    <div class="bendicion">
+    <div class="bendicion reveal-bottom">
       <div class="bendicion-titulo">
         <p>CON LA BENDICIÓN DE JEHOVÁ Y DE NUESTROS PADRES</p>
       </div>
@@ -737,11 +756,11 @@
         </div>
       </div>
 
-      <div class="lineado">
+      <div class="lineado reveal-bottom">
         <span>Faltan</span>
       </div>
           
-      <table class="table-timer">
+      <table class="table-timer reveal-bottom">
         <tr>
           <td id="dias">00</td>
           <td id="horas">00</td>
@@ -756,45 +775,52 @@
         </tr>
       </table>
     </div>
-      <div class="lineado">
-        <span>Detalles</span>
-      </div>
-    <div class="container">
+    <div class="lineado reveal-bottom">
+      <span>Detalles</span>
+    </div>
+    <div class="reveal-bottom">
+      <div class="container">
       <!-- <div class="qr-section">
-        <img src="Reunion-icon.jpg" class="qr" alt="Conferencia">
+        <img id="qr-conferencia" style="border: 10px solid black; padding: 30px; background-color: white;" src="Reunion-icon.jpg" class="qr" alt="Conferencia">
       </div> -->
-      <div class="info">
+      <div class="info reveal-bottom">
         <h1>Conferencia Pública</h1>
         <p>Hora: 02:00 pm</p>
         <p>Salon del reino de los Testigos de Jehová</p>
         <p>Congregación Sensunapán</p>
-        <a href="https://maps.app.goo.gl/jc6nmEJNVW3qsby57" class="boton">UBICACIÓN</a>
+        <a href="https://maps.app.goo.gl/jc6nmEJNVW3qsby57" class="boton">
+          <i class="fa fa-location-dot"></i> UBICACIÓN
+        </a>
       </div>
     </div>
     <div class="container">
-      <div class="info">
+      <div class="info reveal-bottom">
         <h1>Recepción</h1>
         <p>Hora: 04:00 pm</p>
         <p>Casa Comunal</p>
         <p>Colonia El Balsamar</p>
-        <a href="https://maps.app.goo.gl/Z4AeRozfHqWRQH4t6" class="boton">UBICACIÓN</a>
+        <a href="https://maps.app.goo.gl/Z4AeRozfHqWRQH4t6" class="boton">
+          <i class="fa fa-location-dot"></i> UBICACIÓN
+        </a>
       </div>
       <!-- <div class="qr-section">
         <img src="Fiesta-icon.png" class="qr" alt="Recepción">
       </div> -->
+    </div>  
+    </div>  
+    <div class="reveal-bottom">
+      <div id="container-regalo">
+        <p id="titulo-regalo">Sugerencia de Regalo</p>
+        <p id="content-regalo">Si quieres tener un detalle con nosotros, cualquier muestra de cariño es bien recibida. Pero, si nos permites darte una sugerencia, puedes darnos un regalo en sobre.<br><br>Gracias por tu compañía en nuestra nueva etapa.</p>
+      </div>
     </div>    
-    <div class="cita-biblica">
-      <p id="titulo-regalo">Sugerencia de Regalo</p>
-      <p>Si quieres tener un detalle con nosotros, cualquier muestra de cariño es bien recibida. Pero, si nos permites darte una sugerencia, puedes darnos un regalo en sobre.</p>
-      <p>Gracias por tu compañía en nuestra nueva etapa.</p>
-    </div>
-    <div class="confirmacion">
+    <div class="confirmacion reveal-bottom">
       <div id="header-confirmacion">
         <p>CONFIRMA TU ASISTENCIA</p>
       </div>
       
       <div class="footer-content">
-        <p>Tu presencia es muy importante para nosotros.<br>
+        <p>Queremos contar con tu presencia porque eres muy importante para nosotros.<br>
           Por favor confírmanos tu asistencia por WhatsApp hasta el <strong>31 de Octubre</strong>.</p>
 
         <div class="contenedor-botones">
@@ -807,53 +833,80 @@
           </a>
         </div>
 
-        <div class="monograma">KJ</div>
-
+        <div class="monograma reveal-bottom">KJ</div>
+<!-- 
         <p class="mensaje">
           ¡A ponerse guapos que nos vamos a casar!<br>
           Tenemos todo: el traje, el fotógrafo, las flores…<br>
           Pero nos falta lo más importante:<br>
           <strong>¡Contar con tu presencia en este gran día!</strong>
-        </p>
+        </p> -->
       </div>
     </div>
+    </div>
   
-    <table class="banner-fecha">
-      <tr>
-        <td class="corazon" style="text-align: left !important;"><i class="fa-solid fa-heart"></i> <i class="fa-solid fa-heart"></i></td>
-        <td class="fecha" style="font-family: 'UnifrakturCook', cursive; font-size: 3rem;">¡Te Esperamos!</td>
-        <td class="corazon" style="text-align: right !important;"><i class="fa-solid fa-heart"></i> <i class="fa-solid fa-heart"></i></td>
-      </tr>
-    </table>
-    <div class="footer-separador"></div>
+    <div class="reveal-bottom">
+      <table class="banner-fecha">
+        <tr>
+          <td class="corazon" style="text-align: left !important;"><i class="fa-solid fa-heart"></i> <i class="fa-solid fa-heart"></i></td>
+          <td class="fecha" style="font-family: 'UnifrakturCook', cursive; font-size: 3rem;">¡Te Esperamos!</td>
+          <td class="corazon" style="text-align: right !important;"><i class="fa-solid fa-heart"></i> <i class="fa-solid fa-heart"></i></td>
+        </tr>
+      </table>
+    </div>
+    <div class="footer-separador reveal-bottom"></div>
   </div>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {   
-      const enlace = "https://maps.app.goo.gl/jc6nmEJNVW3qsby57";
-      const urlQR = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(enlace)}&size=200x200`;
-      document.getElementById("qr-conferencia").src = urlQR;  
+    function revealFunction() {
+      window.sr = ScrollReveal({ duration: 1350, distance: '250px', easing: 'ease-out' });
+
+      sr.reveal('.reveal-top', { origin: 'top', reset: true });
+      sr.reveal('.reveal-bottom', { origin: 'bottom', reset: false });
+    }
+
+    function hideFunction() {
+      window.sr = ScrollReveal({ duration: 1350, distance: '-250px', easing: 'ease-out' });
+
+      sr.reveal('.reveal-top', { origin: 'bottom', reset: true });
+      sr.reveal('.reveal-bottom', { origin: 'top', reset: true });
+    }
+
+    window.addEventListener('load', () => {
+      revealFunction();
+      let ultimoScroll = window.pageYOffset;
+
+      window.addEventListener("scroll", function () {
+        const actualScroll = window.pageYOffset;
+        const div = document.getElementById("introDiv");
+
+        if (actualScroll > ultimoScroll) {
+        //sr.reveal('.reveal-top', { origin: 'buttom', reset: true });
+          // Scroll hacia abajo → ocultar
+          //div.classList.add("oculto");
+        } else {
+          //revealFunction();
+        //sr.reveal('.reveal-top', { origin: 'top', reset: true });
+          // Scroll hacia arriba → mostrar
+          //div.classList.remove("oculto");
+        }
+
+        ultimoScroll = actualScroll;
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {        
+      const enlace = "https://kevino44.github.io/hosting/";
+      const urlQR = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(enlace)}&size=200x200&color=8b7424`;
+      //document.getElementById("qr-conferencia").src = urlQR;  
 
       const enlace2 = "https://maps.app.goo.gl/Z4AeRozfHqWRQH4t6";
       const urlQR2 = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(enlace2)}&size=200x200`;
-      document.getElementById("qr-recepcion").src = urlQR2;
+      //document.getElementById("qr-recepcion").src = urlQR2;
     });
 
-    let ultimoScroll = window.pageYOffset;
-
-    window.addEventListener("scroll", function () {
-      const actualScroll = window.pageYOffset;
-      const div = document.getElementById("introDiv");
-
-      if (actualScroll > ultimoScroll) {
-        // Scroll hacia abajo → ocultar
-        div.classList.add("oculto");
-      } else {
-        // Scroll hacia arriba → mostrar
-        div.classList.remove("oculto");
-      }
-
-      ultimoScroll = actualScroll;
-    });
+    
 
 
     const fechaObjetivo = new Date("2025-11-30T14:00:00").getTime();
