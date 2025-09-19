@@ -989,6 +989,13 @@
         }
 
         ultimoScroll = actualScroll;
+
+        const btnIrArriba = document.querySelector('.btn-ir-arriba');
+        if (window.scrollY > 100) { // Mostrar el botón después de 100px de scroll
+          btnIrArriba.classList.add('visible');
+        } else {
+          btnIrArriba.classList.remove('visible');
+        }
       });
     });
 
