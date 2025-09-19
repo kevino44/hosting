@@ -999,6 +999,15 @@
       });
     });
 
+    // Desplazar a la parte superior al hacer clic
+    const btnIrArriba = document.querySelector('.btn-ir-arriba');
+    btnIrArriba.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,          // Posición superior
+        behavior: 'smooth' // Efecto de desplazamiento suave
+      });
+    });
+
     document.addEventListener("DOMContentLoaded", function() {
       const enlace = "https://kevino44.github.io/hosting/";
       const urlQR = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(enlace)}&size=200x200&color=8b7424`;
