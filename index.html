@@ -32,6 +32,27 @@
       opacity: 1;
     }
 
+    .btn-ir-arriba {
+      position: fixed; /* Mantiene el botón fijo en la pantalla */
+      bottom: 20px;    /* Distancia desde la parte inferior */
+      right: 20px;     /* Distancia desde la parte derecha */
+      display: none;   /* Oculto por defecto, se mostrará con JS */
+      background-color: #8b7424;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+      font-size: 2rem;
+    }
+
+    /* Clase para mostrar el botón */
+    .btn-ir-arriba.visible {
+      display: block;
+      z-index: 100;
+    }
+
     .fade-scroll {
       opacity: 0;
       transition: opacity 1.2s ease-out, transform 1.2 ease-out;
@@ -80,6 +101,10 @@
       font-size: 1.8rem;
     }
 
+    .intro-swipe-up p {
+      margin: 0;
+    }
+
     .chevron-container {
       display: flex;
       justify-content: center;
@@ -92,9 +117,8 @@
       border: 1px solid #8b7424;
       border-radius: 50%;
       margin: 0 auto;
-      margin-top: 10px;
-      margin-bottom: 0;
-      text-decoration: none;
+      margin-top: 20px;
+      cursor: pointer;
     }
 
     .chevron-up {
@@ -729,18 +753,21 @@
           </tr>
           <tr>
             <td class="intro-swipe-up">
-              <button class="chevron-container" type="button" onclick="scrollToMain()" id="swipeUp">
-                <i class="fa-solid fa-chevron-up"></i>
-              </button>
               <p>
-                Desliza hacia arriba
+                Desliza para ver más
               </p>
+              <button class="chevron-container" type="button" onclick="scrollToMain()" id="swipeUp">
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
             </td>
           </tr>
         </table>
       </div>
     </div>
     <div id="mainContent">
+      <button id="swipeDown" class="btn-ir-arriba">
+        <i class="fa-solid fa-chevron-up"></i>
+      </button>
       <div class="reveal-bottom"> 
         <table class="header-invitacion">
           <tr>
