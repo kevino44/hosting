@@ -864,10 +864,10 @@
             <a href="https://ul.waze.com/ul?place=ChIJ9VgWIAC3Yo8RcaRJnhL-MRs&ll=13.70979720%2C-89.72980700&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" class="boton">
               <i class="fa-brands fa-waze"></i> UBICACIÓN
             </a>
-            <div>
-              <img src="zoom.png" style="width: 60px; margin: 0 auto; display: flex;" alt="live">
-              <p>Proximamente...</p>
-            </div>
+            <a onclick="Proximamente('zoom')" class="boton">
+              <img src="zoom-svgrepo-com (2).svg" style="width: 35px; display: inline-block; vertical-align: top;" alt="live">
+              <span>MEETING</apan>
+            </a>
           </div>
         </div>
         <div class="container">
@@ -882,11 +882,10 @@
             <a href="https://ul.waze.com/ul?venue_id=177143945.1771308380.1082875&overview=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" class="boton">
               <i class="fa-brands fa-waze"></i> UBICACIÓN
             </a>
-            <div>
-              <img src="live-stream.png" style="width: 100px; margin: 0 auto; display: flex;" alt="live">
-              <p>Proximamente...</p>
-            </div>
-          </div>
+            <a onclick="Proximamente('live')" class="boton">
+              <img src="signal-stream-svgrepo-com (1).svg" style="width: 35px; display: inline-block; vertical-align: top;" alt="live">
+              <span>LIVE</apan>
+            </a>
           <!-- <div class="qr-section">
             <img src="Fiesta-icon.png" class="qr" alt="Recepción">
           </div> -->
@@ -967,6 +966,15 @@
             block: 'start'
           });
         }
+    }
+    
+    function Proximamente(typeMessage) {
+      if (typeMessage == 'zoom') {
+        alert("¡Proximamente! Enlace a la conferencia a través de la plataforma Zoom que estará disponible más adelante.");
+      }
+      else if (typeMessage == 'live') {
+        alert("¡Proximamente! Enlace de transmición en vivo que se compartirá más adelante.");
+      }
     }
 
     window.addEventListener('load', () => {
